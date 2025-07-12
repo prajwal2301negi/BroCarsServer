@@ -312,8 +312,8 @@ export const logOutUser = asyncErrorHandler(async (req, res, next) => {
         .cookie("tokena", "", {
             expiresIn: new Date(Date.now()),
             httpOnly: true,
-            //secure: true,
-            //sameSite: "Strict"
+            secure: true,
+            sameSite: "Strict"
         })
         .json({
             success: true,
