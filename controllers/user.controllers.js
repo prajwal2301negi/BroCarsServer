@@ -268,8 +268,8 @@ export const logOutUser = asyncErrorHandler(async (req, res, next) => {
         .cookie("tokenu", "", {
             expiresIn: new Date(Date.now()),
             httpOnly: true,
-            //secure: true,
-            // sameSite: "Strict"
+            secure: true,
+            sameSite: "Strict"
         })
         .json({
             success: true,
@@ -363,8 +363,8 @@ export const resetPassword = asyncErrorHandler(async (req, res, next) => {
     res.status(200).cookie("tokenu", tokenu, {
         expiresIn: new Date(Date.now() + Number(process.env.COOKIE_EXPIRES) * 24 * 60 * 60 * 1000),
         httpOnly: true,
-        // secure:true,
-        // sameSite: "Strict"
+        secure:true,
+        sameSite: "Strict"
     }).json({
         success: true,
         message: "Password reset successully",
