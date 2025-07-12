@@ -7,12 +7,12 @@ import { isAuthenticated, isUserAuthenticated } from '../utils/auth.js';
 const router = express.Router();
 
 const registerLimiter = limiter({
-    max: 5,
+    max: 50,
     windowMs: 20*60*1000, // 20min
     message: 'We have received too many registeration requests from this Address. Please try after 30 min.'
 })
 const loginLimiter = limiter({
-    max: 5,
+    max: 50,
     windowMs: 30 * 60 * 1000, // 30min
     message: 'We have received too many login requests from this Address. Please try after 30 min.'
 })
