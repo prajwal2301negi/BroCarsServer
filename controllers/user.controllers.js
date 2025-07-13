@@ -364,7 +364,7 @@ export const resetPassword = asyncErrorHandler(async (req, res, next) => {
         expiresIn: new Date(Date.now() + Number(process.env.COOKIE_EXPIRES) * 24 * 60 * 60 * 1000),
         httpOnly: true,
         secure:true,
-        sameSite: "Strict"
+        sameSite: "none",
     }).json({
         success: true,
         message: "Password reset successully",
