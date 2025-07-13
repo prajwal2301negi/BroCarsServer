@@ -313,7 +313,7 @@ export const logOutUser = asyncErrorHandler(async (req, res, next) => {
             expiresIn: new Date(Date.now()),
             httpOnly: true,
             secure: true,
-            sameSite: "Strict"
+            sameSite: "none",
         })
         .json({
             success: true,
